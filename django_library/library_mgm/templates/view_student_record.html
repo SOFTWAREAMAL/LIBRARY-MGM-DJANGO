@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View-Student-Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'a.css'%}">
+</head>
+<body>
+    <center>    
+    
+    <form action="view_student_record" method="post">
+        {% csrf_token %}
+        <br>
+        <h1>View Student Details</h1><br>
+        <label for="a"> User Name:</label>
+        <input type="text" id="a" name="admin_name" required><br><br>
+
+        <label for="b">Admin Password:</label>
+        <input type="password" id="b" name="admin_password" required> <br> <br>
+
+        <input type="submit" value="view-book-details">
+        <br><br>
+    </form>
+    <br>
+    <button><a href="homepage">HOME</a></button>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+          <h1>  <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {{ message }}
+            </li></h1>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</center>
+
+</body>
+</html>

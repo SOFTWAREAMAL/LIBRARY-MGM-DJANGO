@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>al_message</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'a.css'%}">
+</head>
+<body>
+    <center>
+    <form action="view" method="post">
+        <table>
+            <th>| BOOK LIST | <hr></th>  
+            {% for i in r %}
+            <tr>
+                <td>{{ i.book_name }}</td>
+              
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+
+<button><a href="homepage">HOME</a></button>
+</center>
+</body>
+</html>

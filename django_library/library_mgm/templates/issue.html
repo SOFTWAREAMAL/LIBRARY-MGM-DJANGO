@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>issue_book</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'a.css'%}">
+</head>
+<body>
+    <center>
+    
+    <form action="issue_book" method="post">
+        {% csrf_token %}
+        <br>
+        <h1>BOOK ISSUE</h1>
+
+        <label for="a">Book Name:</label>
+        <input type="text" id="a" name="book_name" required> <br> <br>
+
+        <label for="b">Student Name:</label>
+        <input type="text" id="b" name="student_name" required> <br> <br>
+        
+        <label for="c">Issue date:</label>
+        <input type="text" id="c" name="issue_date" required> <br> <br>
+
+        <label for="d">Return date:</label>
+        <input type="text" id="d" name="return_date" required> <br> <br>
+
+        <label for="b"> Admin Password:</label>
+        <input type="password" id="b" name="admin_password" required>  <br> <br>
+
+        <input type="submit" value="book issue"> <br> <br>
+
+    </form>
+    <br>
+    <button><a href="homepage">HOME PAGE</a></button>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+          <h1>  <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {{ message }}
+            </li></h1>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</center>
+</body>
+</html>
